@@ -1,7 +1,7 @@
 {
   "name": "lightapp",
   "version": "0.0.1",
-  "description": "Lightweight App Platform - A lightweight platform for Node.js applications",
+  "description": "Lightweight App Platform - A scaffold for creating Node.js applications",
   "main": "app.js",
   "scripts": {
     "start": "DEBUG=* node app",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/gaballard/lightapp.git"
   },
   "author": "Geoffrey Ballard",
   "license": "MIT",
