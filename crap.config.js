@@ -2,8 +2,9 @@ var cfg = module.exports = {
     root: __dirname,
 
     apis: {
-        api: dependencies({
-            controllers: 'controller'
+        core: dependencies({
+            controllers: 'controller',
+            resources: 'server'
         })
     },
 
@@ -28,6 +29,9 @@ var cfg = module.exports = {
     resources: {
         resource: {
             source: './resources/resource.js'
+        },
+        server: {
+            source: './resources/express.js'
         }
     }
 };

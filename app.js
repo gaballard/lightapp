@@ -11,5 +11,5 @@ debug(`Starting ${config.app.name}...`);
 module.exports = 
     crap
     .load
-    .apis(config.app.apis)
+    .apis(config.apis)
     .catch(err => debug('Error loading APIs %O', err.stack));
