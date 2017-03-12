@@ -1,7 +1,7 @@
 {
   "name": "lightapp",
-  "version": "0.0.1",
-  "description": "Lightweight App Platform - A scaffold for creating Node.js applications",
+  "version": "1.1.0",
+  "description": "Lightweight Application Framework - a scaffold for creating Node.js applications",
   "main": "app.js",
   "scripts": {
     "start": "DEBUG=* node app",

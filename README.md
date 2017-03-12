@@ -4,7 +4,7 @@ A scaffold for creating Node.js applications.
 
 ## Components
 
-Lightapp uses the CRaP framework to provide dependency injection and assist with separation of concerns.
+This service uses the [CRaP](https://github.com/tinder/crap) framework to provide dependency injection and assist with separation of concerns. It also uses the [effd](https://github.com/williamkapke/effd) promise wrapping library (the variables ƒ and Ø are part of this library).
 
 #### Controllers
 
