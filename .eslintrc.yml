@@ -1,0 +1,31 @@
+env:
+  es6: true
+  node: true
+extends: 'eslint:recommended'
+color: true
+parser: 'babel-eslint'
+plugins:
+  - babel
+parserOptions:
+  sourceType: module
+rules:
+  indent:
+    - error
+    - 2
+    - SwitchCase: 1
+  linebreak-style:
+    - error
+    - unix
+  quotes:
+    - error
+    - single
+  semi:
+    - error
+    - always
+  no-console:
+    - 1
+    - allow:
+      - error
+      - warn
+      - info
+      - log

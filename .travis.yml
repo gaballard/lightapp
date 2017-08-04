@@ -1,0 +1,14 @@
+sudo: false
+language: node_js
+node_js: # automatically infers from .nvmrc
+cache:
+  yarn: true
+services:
+- docker
+before_install:
+- docker build -t lightapp .
+- docker run lightapp -p 3000:3000
+- curl localhost:3000
+script:
+- npm run lint
+- echo "need to write tests!!!"
