@@ -2,22 +2,19 @@
  * Resource
  */
 
-var ƒ = require('effd'),
-    debug = require('debug')('resources:resource'),
-    debugˆ = ƒ.passthrough(debug);
+import Promise from 'bluebird';
+import debug from 'debug';
 
-module.exports = function() {
+// eslint-disable-next-line no-unused-vars
+const logger = debug('resources:resource');
+
+function auto() {
     
-    /* Function format
-    var func = input =>
-        debugˆ('func %s', input)
-        .then(input => input)
-        .catch();
-    */
-    
-    var interface = {
+  const api = {
         
-    };
+  };
     
-    return ƒ(interface);
-};
+  return Promise.resolve(api);
+}
+
+module.exports = auto;

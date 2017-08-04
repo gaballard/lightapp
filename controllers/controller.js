@@ -2,23 +2,18 @@
  * Controller
  */
 
-var ƒ = require('effd'),
-    debug = require('debug')('controllers:controller'),
-    debugˆ= ƒ.passthrough(debug);
+import Promise from 'bluebird';
+import debug from 'debug';
 
-module.exports = function auto(dependencies) {
-    var providers = dependencies.providers;
-    
-    /* Function format
-    var func = input =>
-        debugˆ('func %s', input)
-        .then(input => input)
-        .catch();
-    */
-    
-    var interface = {
-        
-    };
+// eslint-disable-next-line no-unused-vars
+const logger = debug('controllers:controller');
 
-    return Promise.resolve(interface);
-};
+// eslint-disable-next-line no-unused-vars
+function auto(dependencies) {
+  
+  const api = {};
+
+  return Promise.resolve(api);
+}
+
+module.exports = auto;
