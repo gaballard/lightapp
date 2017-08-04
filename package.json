@@ -2,9 +2,16 @@
   "name": "lightapp",
   "version": "1.1.0",
   "description": "Lightweight Application Framework - a scaffold for creating Node.js applications",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
-    "start": "DEBUG=* node app",
+    "dev": "npm run lint && pm2 start --no-daemon pm2.dev.yml",
+    "lint": "eslint ./**/* --ext .js",
+    "pm2:logs": "pm2 logs",
+    "pm2:kill": "pm2 kill",
+    "pm2:ls": "pm2 ls",
+    "pm2:monit": "pm2 monit",
+    "pm2:show": "pm2 show",
+    "prod": "npm run lint && pm2 start pm2.prod.yml",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -14,11 +21,31 @@
   "author": "Geoffrey Ballard",
   "license": "MIT",
   "dependencies": {
+    "bluebird": "^3.5.0",
     "crap": "^5.1.0",
-    "effd": "^1.4.8",
-    "express": "^4.15.2"
+    "debug": "^2.6.8",
+    "express": "^4.15.3",
+    "lodash": "^4.17.4",
+    "pino": "^4.7.1",
+    "pino-debug": "^1.0.3",
+    "pino-noir": "^1.2.0",
+    "pm2": "^2.6.1",
+    "request": "^2.81.0",
+    "request-promise": "^4.2.1"
   },
   "devDependencies": {
-    "debug": "^2.6.1"
+    "babel": "^6.23.0",
+    "babel-cli": "^6.24.1",
+    "babel-eslint": "^7.2.3",
+    "babel-plugin-inline-import": "^2.0.6",
+    "babel-preset-es2017-node7": "^0.5.2",
+    "babel-register": "^6.24.1",
+    "chai": "^4.1.0",
+    "eslint": "^3.17.1",
+    "eslint-plugin-babel": "^4.1.2",
+    "mocha": "^3.5.0",
+    "nodemon": "^1.11.0",
+    "sinon": "^3.0.0",
+    "sinon-chai": "^2.12.0"
   }
 }
