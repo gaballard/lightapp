@@ -1,0 +1,23 @@
+apps:
+  - script: ./index.js  # needs to be "index.js" for babel to work
+    name: 'lightapp'
+    interpreter: nodemon
+    watch:
+      - ".babelrc"
+      - ".eslintrc.yml"
+      - "*.js"
+      - "*.json"
+      - "*.yml"
+      - "*.yaml"
+      - "yarn.lock"
+    ignoreWatch: 
+      - "package.json"
+      - "*.log"
+    source_map_support: true
+    combine_logs: true
+    log_file: 'combined.log'
+    autorestart: false
+    env:
+      NODE_ENV: production
+      DEBUG: 'lightapp, apis:*, controllers:*, providers:*, resources:*'
+      interpreter: node

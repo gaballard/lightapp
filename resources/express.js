@@ -2,38 +2,42 @@
  * Express Resource
  */
 
-var ƒ = require('effd'),
-    debug = require('debug')('resources:express'),
-    debugˆ = ƒ.passthrough(debug),
-    express = require('express'),
-    config = require('../config/config'),
-    server;
+import Promise from 'bluebird';
+import debug from 'debug';
+import express from 'express';
+import config from '../config/config';
 
-module.exports = function auto(dependencies) {
+const logger = debug('resources:express');
+
+var server;
+
+function auto() {
+  
+  // Singleton instance
+  if (server) {
+    logger('Using existing Express server...');
+    return new Promise(server);
+  }
+  
+  return server = new Promise((resolve) => {
+    logger('Creating Express server...');
     
-    // Singleton instance
-    if (server) {
-        debug('Using existing Express server...');
-        return ƒ(server);
-    }
+    const app = express();
     
-    return server = ƒ(Ø => {
-        debug('Creating Express server...');
-        
-        var app = express();
-        
-        // App settings
-        app.locals.title = config.app.title;
-        app.locals.description = config.app.description;
-        
-        // Set HTTP Headers
-        
-        // Middleware goes here
-        
-        // Start server
-        app.listen(config.port, () => {
-            debug(`Express server running on port ${config.port}`);
-            Ø.done(app);
-        });
+    // App settings
+    app.locals.title = config.app.title;
+    app.locals.description = config.app.description;
+    
+    // Set HTTP Headers
+    
+    // Middleware goes here
+    
+    // Start server
+    app.listen(config.port, () => {
+      logger('Express server running on port: %s', config.port);
+      resolve(app);
     });
-};
+  });
+}
+
+module.exports = auto;

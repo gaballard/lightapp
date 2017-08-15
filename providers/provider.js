@@ -2,23 +2,18 @@
  * Provider
  */
 
-var ƒ = require('effd'),
-    debug = require('debug')('providers:provider'),
-    debugˆ= ƒ.passthrough(debug);
+import Promise from 'bluebird';
+import debug from 'debug';
 
-module.exports = function auto(dependencies) {
-    var resources = dependencies.resources;
-    
-    /* Function format
-    var func = input =>
-        debugˆ('func %s', input)
-        .then(input => input)
-        .catch();
-    */
-    
-    var interface = {
-        
-    };
-    
-    return ƒ.done(interface);
-};
+// eslint-disable-next-line no-unused-vars
+const logger = debug('providers:provider');
+
+// eslint-disable-next-line no-unused-vars
+function auto(dependencies) {
+  
+  const api = {};
+  
+  return Promise.resolve(api);
+}
+
+module.exports = auto;

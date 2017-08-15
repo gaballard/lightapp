@@ -1,0 +1,27 @@
+{
+  "restartable": "rs",
+  "ignore": [
+    ".git",
+    "node_modules/**/node_modules",
+    "**/*-test*"
+  ],
+  "verbose": true,
+  "execMap": {
+    "js": "babel-node --harmony",
+    "yml": "pm2 start"
+  },
+  "events": {
+    "restart": "npm run lint",
+    "exit": "echo \"exited process - via nodemon\"",
+    "crash": "echo \"crashed process - via nodemon\""
+  },
+  "watch": [
+    "**/"
+  ],
+  "env": {
+    "NODE_ENV": "dev",
+    "DEBUG": "lightapp, apis:*, controllers:*, providers:*, resources:*",
+    "BABEL_DISABLE_CACHE": 1
+  },
+  "ext": "js json"
+}
