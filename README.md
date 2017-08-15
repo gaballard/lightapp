@@ -1,5 +1,7 @@
 # Lightweight Application Framework
 
+[![Build Status](https://travis-ci.org/gaballard/lightapp.svg?branch=master)](https://travis-ci.org/gaballard/lightapp)
+
 A scaffold for creating Node.js applications.
 
 ## Components
