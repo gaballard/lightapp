@@ -12,7 +12,8 @@
     "pm2:monit": "pm2 monit",
     "pm2:show": "pm2 show",
     "prod": "npm run lint && pm2 start pm2.prod.yml",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "repl": "babel-node",
+    "test": "echo \"Need to write some tests!\""
   },
   "repository": {
     "type": "git",
@@ -41,6 +42,7 @@
     "babel-preset-es2017-node7": "^0.5.2",
     "babel-register": "^6.24.1",
     "chai": "^4.1.0",
+    "co-mocha": "^1.2.0",
     "eslint": "^3.17.1",
     "eslint-plugin-babel": "^4.1.2",
     "mocha": "^3.5.0",
