@@ -13,7 +13,9 @@ function auto(dependencies) {
   // Routes, etc, go here
   server.get('/', (req, res) => {
     logger('GET /');
-    res.status(200).send('ok').catch(err => { console.log(err); });
+    res.status(200).json({
+      status: 'OK',
+    });
   });
   
   return Promise.resolve(server);
