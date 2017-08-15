@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/gaballard/lightapp.svg?branch=master)](https://travis-ci.org/gaballard/lightapp)
 
-A scaffold for creating Node.js applications.
+A scaffold for quickly creating robust, dependency-managed Node.js applications.
 
 ## Components
 

@@ -1,7 +1,7 @@
 {
   "name": "lightapp",
   "version": "1.1.0",
-  "description": "Lightweight Application Framework - a scaffold for creating Node.js applications",
+  "description": "Lightweight Application Framework - a scaffold for quickly creating robust, dependency-managed Node.js applications",
   "main": "index.js",
   "scripts": {
     "dev": "npm run lint && pm2 start --no-daemon pm2.dev.yml",
