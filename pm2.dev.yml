@@ -1,15 +1,15 @@
 apps:
-  - script: ./index.js  # needs to be "index.js" for babel to work
+  - script: ./src/index.ts  # needs to be "index.js" for babel to work
     name: 'lightapp'
     interpreter: nodemon
     watch:
-      - ".babelrc"
-      - ".eslintrc.yml"
-      - "*.js"
+      - "tsconfig.json"
+      - "tslint.json"
+      - "*.ts"
       - "*.json"
       - "*.yml"
       - "*.yaml"
-      - "yarn.lock"
+      - "package-lock.json"
     ignoreWatch: 
       - "package.json"
       - "*.log"
@@ -19,4 +19,5 @@ apps:
     autorestart: false
     env:
       NODE_ENV: dev
-      DEBUG: 'lightapp, apis:*, controllers:*, providers:*, resources:*'
+      DEBUG: 'light-loader, light-loader:parallel, lightapp'
+      # DEBUG: 'light-loader, lightapp, apis:*, controllers:*, providers:*, resources:*'

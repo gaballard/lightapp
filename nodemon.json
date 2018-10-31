@@ -3,12 +3,12 @@
   "ignore": [
     ".git",
     "node_modules/**/node_modules",
-    "**/*-test*"
+    "**/*tests*"
   ],
   "verbose": true,
   "execMap": {
-    "js": "babel-node --harmony",
-    "yml": "pm2 start"
+    "js": "node",
+    "ts": "ts-node"
   },
   "events": {
     "restart": "npm run lint",
@@ -18,10 +18,5 @@
   "watch": [
     "**/"
   ],
-  "env": {
-    "NODE_ENV": "dev",
-    "DEBUG": "lightapp, apis:*, controllers:*, providers:*, resources:*",
-    "BABEL_DISABLE_CACHE": 1
-  },
-  "ext": "js json"
+  "ext": "json ts js"
 }

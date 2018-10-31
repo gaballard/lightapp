@@ -1,18 +1,18 @@
 {
   "name": "lightapp",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Lightweight Application Framework - a scaffold for quickly creating robust, dependency-managed Node.js applications",
   "main": "index.js",
   "scripts": {
     "dev": "npm run lint && pm2 start --no-daemon pm2.dev.yml",
-    "lint": "eslint ./**/* --ext .js",
+    "lint": "tslint src/**/*.ts",
     "pm2:logs": "pm2 logs",
     "pm2:kill": "pm2 kill",
     "pm2:ls": "pm2 ls",
     "pm2:monit": "pm2 monit",
     "pm2:show": "pm2 show",
     "prod": "npm run lint && pm2 start pm2.prod.yml",
-    "repl": "babel-node",
+    "repl": "ts-node",
     "test": "echo \"Need to write some tests!\""
   },
   "repository": {
@@ -25,16 +25,24 @@
     "bluebird": "^3.5.0",
     "crap": "^5.1.0",
     "debug": "^2.6.8",
-    "express": "^4.15.3",
+    "express": "^4.16.4",
     "lodash": "^4.17.4",
     "pino": "^4.7.1",
     "pino-debug": "^1.0.3",
     "pino-noir": "^1.2.0",
     "pm2": "^2.6.1",
     "request": "^2.81.0",
-    "request-promise": "^4.2.1"
+    "request-promise": "^4.2.1",
+    "ts-node": "^7.0.1",
+    "typescript-require": "^0.2.10"
   },
   "devDependencies": {
+    "@types/bluebird": "^3.5.24",
+    "@types/debug": "0.0.31",
+    "@types/express": "^4.16.0",
+    "@types/koa": "^2.0.46",
+    "@types/lodash": "^4.14.117",
+    "@types/node": "^10.12.1",
     "babel": "^6.23.0",
     "babel-cli": "^6.24.1",
     "babel-eslint": "^7.2.3",
@@ -45,9 +53,11 @@
     "co-mocha": "^1.2.0",
     "eslint": "^3.17.1",
     "eslint-plugin-babel": "^4.1.2",
-    "mocha": "^3.5.0",
+    "mocha": "^5.2.0",
     "nodemon": "^1.11.0",
-    "sinon": "^3.0.0",
-    "sinon-chai": "^2.12.0"
+    "sinon": "^7.1.0",
+    "sinon-chai": "^2.12.0",
+    "tslint": "^5.11.0",
+    "typescript": "^3.1.3"
   }
 }
